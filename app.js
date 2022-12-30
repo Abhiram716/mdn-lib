@@ -3,11 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose  = require("mongoose");
+require("dotenv").config({ path: "./.env" });
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const catalogRouter = require("./routes/catalog");
 
 var app = express();
+
+const mongoDB = process.env.DB_URL;
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true },()=>console.log("connected"));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use("/catalog", catalogRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,3 +47,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
