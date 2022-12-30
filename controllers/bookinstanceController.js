@@ -1,6 +1,5 @@
-const bookInstance =require("../models/bookinstance");
+const bookInstance = require("../models/bookinstance");
 
-exports.bookInstance = (req,res) => {
+exports.bookInstance = (req, res) => {
     res.send("book instance");
-}
-
+};

@@ -18,4 +18,3 @@ BookSchema.virtual("url").get(function () {
 
 // Export model
 module.exports = mongoose.model("Book", BookSchema);
-

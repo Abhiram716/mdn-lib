@@ -7,7 +7,7 @@ var authorController = require("../controllers/authorController");
 var genreController = require("../controllers/genreController");
 var bookinstanceController = require("../controllers/bookinstanceController");
 
-router .get("/",bookController.books);
+router.get("/", bookController.books);
 router.get("/books", bookController.books);
 
 // GET request for list of all Authors.
@@ -20,4 +20,3 @@ router.get("/genres", genreController.genre_list);
 router.get("/bookinstances", bookinstanceController.bookInstance);
 
 module.exports = router;
-
