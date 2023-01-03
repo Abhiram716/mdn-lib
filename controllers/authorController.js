@@ -1,5 +1,3 @@
-const Author = require("../models/author");
-
-exports.author_list = (req, res) => {
+exports.authorList = (req, res) => {
     res.send("authors");
 };

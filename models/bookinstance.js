@@ -11,7 +11,7 @@ const BookInstanceSchema = new Schema({
         enum: ["Available", "Maintenance", "Loaned", "Reserved"],
         default: "Maintenance",
     },
-    due_back: { type: Date, default: Date.now },
+    dueBack: { type: Date, default: Date.now },
 });
 
 // Virtual for bookinstance's URL
